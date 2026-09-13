@@ -1,6 +1,6 @@
 # Windows Fundamentals
 
-## Part 1: File System & Security
+## Part 1: File System & Security(11/9/2026)
 
 ### NTFS (New Technology File System)
 
@@ -47,7 +47,7 @@ Currently uses **NTFS** instead of FAT or HPFS
 
 ---
 
-## Part 2: System Configuration & Management
+## Part 2: System Configuration & Management(12/9/2026)
 
 ### System Configuration (MSConfig)
 
