@@ -134,31 +134,43 @@ Currently uses **NTFS** instead of FAT or HPFS
 - Applications
 - Hardware devices
 
----
-## Part 3: 
-# Part 3: Windows Security & Protection
+---# Part 3: Windows Security & Protection
 
 ## Update Security
 
 - Check update history (dates of updates)
 - View what needs immediate attention
 
+![Update History](./screenshots/update-history.png)
+*View of Windows update history showing driver updates and definition updates*
+
 ---
 
 ## Windows Security
 
+### Overview
+
+![Windows Security Dashboard](./screenshots/windows-security-dashboard.png)
+*Windows Security main panel showing security status at a glance*
+
 ### Virus & Threat Protection
 
 - **Scan Options:**
-  - Quick scan
-  - Full scan
-  - Custom scan
+  - Quick scan - Checks folders where threats are commonly found
+  - Full scan - Checks all files and running programs (can take over 1 hour)
+  - Custom scan - Choose specific files and locations to check
 - View threat history
 - Real-time protection
 - Cloud-delivered protection
 - Automatic sample submission (helps Microsoft protect against threats)
 - Controlled folder access
 - Exclusions
+
+![Virus & Threat Protection Scans](./screenshots/virus-threat-protection-scans.png)
+*Scan options and last scan results showing no threats detected*
+
+![Threat History](./screenshots/threat-history.png)
+*Threat history showing scan results, quarantined threats, and allowed threats*
 
 ### Firewall & Network Protection
 
@@ -177,6 +189,9 @@ Currently uses **NTFS** instead of FAT or HPFS
 
 - Core Isolation
 - Memory Integrity
+
+![Core Isolation - Memory Integrity](./screenshots/core-isolation.png)
+*Core Isolation feature showing Memory Integrity protection status*
 
 ---
 
