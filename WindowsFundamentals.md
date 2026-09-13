@@ -120,8 +120,6 @@ Currently uses **NTFS** instead of FAT or HPFS
 
 ---
 
-## Part 3: Command Prompt & Registry
-
 ### Command Prompt Commands
 
 | Command | Description |
@@ -137,6 +135,9 @@ Currently uses **NTFS** instead of FAT or HPFS
 - Hardware devices
 
 ---
+## Part 3: 
+
+
 
 **Last Updated:** 2026  
 **Status:** 📚 Active Learning
