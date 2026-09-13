@@ -136,8 +136,80 @@ Currently uses **NTFS** instead of FAT or HPFS
 
 ---
 ## Part 3: 
+# Part 3: Windows Security & Protection
 
+## Update Security
 
+- Check update history (dates of updates)
+- View what needs immediate attention
+
+---
+
+## Windows Security
+
+### Virus & Threat Protection
+
+- **Scan Options:**
+  - Quick scan
+  - Full scan
+  - Custom scan
+- View threat history
+- Real-time protection
+- Cloud-delivered protection
+- Automatic sample submission (helps Microsoft protect against threats)
+- Controlled folder access
+- Exclusions
+
+### Firewall & Network Protection
+
+| Profile | Use Case |
+|---------|----------|
+| **Domain** | Company/enterprise networks |
+| **Private** | Home and trusted networks |
+| **Public** | Untrusted public networks (airports, coffee shops) |
+
+### Microsoft Defender SmartScreen
+
+- Protects against phishing websites
+- Protects against malware websites
+
+### Device Security
+
+- Core Isolation
+- Memory Integrity
+
+---
+
+## BitLocker
+
+- Integrated with the operating system
+- Addresses threats of data theft
+- Full disk encryption
+
+---
+
+## Volume Shadow Copy Service (VSS)
+
+### Overview
+
+- Coordinates required actions to create consistent shadow copy
+- Enabled when System Protection is turned ON
+
+### What You Can Do
+
+- Create restore points
+- Perform system restore
+- Configure restore settings
+- Delete restore points
+
+### Security Risk ⚠️
+
+Malware writers specifically target VSS files:
+- They delete shadow copy files to prevent recovery
+- Makes ransomware recovery **impossible** without offline/off-site backup
+- Critical to maintain offline backups
+
+---
 
 **Last Updated:** 2026  
 **Status:** 📚 Active Learning
