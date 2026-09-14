@@ -226,24 +226,134 @@ Malware writers specifically target VSS files:
 
 ---
 
-Part 4: Active Directory basics
-Window domain in a group of users and computers under administration of a given business 
-centralise the administration of common components of a window computer network in a single repository called Active directory
-server that runs AD is called "Domain Controller"
-Pro
-- centralised identity management, all user across the network can be configured from AD with minimum effort
-- managing security policies, can configure security policies directly from AD and apply to user
-  security groups
-  Domain admins, have admin privileges over the entire domain
-  server operators, can admin DC but can't change only admin group memberships
-  Organizational unit, handy for applying policies
-  Security group, grant permission over resources
-  Delegation, allows you to grant users specific privileges to perform advanced tasks on OUs without needing a Domain Administrator to step in.
-Kerberos: Used by any recent version of Windows. This is the default protocol in any recent domain.
-NetNTLM: Legacy authentication protocol kept for compatibility purposes.
-GPOs are distributed to the network via a network share called SYSVOL, which is stored in the DC. All users in a domain should typically have access to this share over the network to sync their GPOs periodically. The SYSVOL share points by default to the C:\Windows\SYSVOL\sysvol\ directory on each of the DCs in our network.
+# Part 4: Active Directory & Domain Management
 
-Once a change has been made to any GPOs, it might take up to 2 hours for computers to catch up. If you want to force any particular computer to sync its GPOs immediately, you can always run the following command on the desired computer:
+## Overview
 
-**Last Updated:** 2026  
+Active Directory (AD) is Microsoft's centralized management system for Windows networks. It allows administrators to manage users, computers, and security policies from a single repository on a Domain Controller.
+
+---
+
+## What is Active Directory?
+
+**Definition:** A directory service that manages a group of users and computers under administration of a given business.
+
+**Key Component:** Domain Controller (DC) - The server that runs Active Directory and stores all domain information.
+
+---
+
+## Benefits of Active Directory
+
+### Centralized Identity Management
+- All users across the network can be configured from AD with minimum effort
+- One place to manage all domain accounts
+
+### Centralized Security Policy Management
+- Configure security policies directly from AD
+- Apply policies consistently across the domain
+- Use security groups to grant permissions
+
+---
+
+## AD Components
+
+### Security Groups
+- **Domain Admins** - Have admin privileges over the entire domain
+- **Server Operators** - Can admin Domain Controller but can't change admin group memberships
+- Custom security groups for resource permissions
+
+### Organizational Units (OUs)
+- Handy for applying policies to specific groups of users/computers
+- Allows hierarchical organization of domain objects
+
+### Delegation
+- Grant users specific privileges to perform tasks without full Domain Admin access
+- Useful for decentralized administration
+
+---
+
+## Authentication Protocols
+
+### Kerberos (Modern)
+- Default protocol in recent Windows versions
+- More secure than legacy authentication
+
+### NetNTLM (Legacy)
+- Kept for compatibility with older systems
+- Should be avoided for new implementations
+
+---
+
+## Group Policy Objects (GPOs)
+
+### Distribution
+- GPOs are stored in SYSVOL share on Domain Controllers
+- Default path: `C:\Windows\SYSVOL\sysvol\`
+- All domain users have access for syncing
+
+### Update Timing
+- Changes can take up to **2 hours** to propagate
+- Force immediate sync with:
+```powershell
+  gpupdate /force
+```
+
+### Management
+- Centralized control of user and computer configurations
+- Applied based on OU hierarchy
+
+---
+
+## Active Directory Setup & Configuration
+
+![AD Environment Setup](./screenshots/AD_SETUP.png)
+*Initial Active Directory environment configuration*
+
+### Creating Organizational Units
+
+![Creating New OU](./screenshots/createNewOU.png)
+*Process of creating a new Organizational Unit for policy management*
+
+### Configuring Policies
+
+![Changing Password Length Policy](./screenshots/Changing_pwLength.png)
+*Setting password length requirements via Group Policy*
+
+### Domain Tree Structure
+
+![Active Directory Tree](./screenshots/tree.png)
+*Hierarchical structure of users and computers in the domain*
+
+---
+
+## Delegation & Access Control
+
+### Setting Up Delegation
+
+![Delegation Setup](./screenshots/delegationSU.png)
+*Initial delegation configuration for user privileges*
+
+### Delegation Details
+
+![Delegation in Detail](./screenshots/delegationSUinDetail.png)
+*Detailed view of delegated permissions and access rights*
+
+### Enabling Access
+
+![Enable Access Configuration](./screenshots/enable_access.png)
+*Configuring access permissions for delegated users*
+
+---
+
+## Key Takeaways
+
+✅ AD centralizes user and computer management  
+✅ GPOs enforce security policies across the domain  
+✅ Kerberos is the modern authentication standard  
+✅ Delegation allows secure decentralized administration  
+✅ SYSVOL stores and distributes GPO updates  
+
+---
+
+**Last Updated:** 2026-09-14  
 **Status:** 📚 Active Learning
