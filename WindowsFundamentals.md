@@ -226,5 +226,24 @@ Malware writers specifically target VSS files:
 
 ---
 
+Part 4: Active Directory basics
+Window domain in a group of users and computers under administration of a given business 
+centralise the administration of common components of a window computer network in a single repository called Active directory
+server that runs AD is called "Domain Controller"
+Pro
+- centralised identity management, all user across the network can be configured from AD with minimum effort
+- managing security policies, can configure security policies directly from AD and apply to user
+  security groups
+  Domain admins, have admin privileges over the entire domain
+  server operators, can admin DC but can't change only admin group memberships
+  Organizational unit, handy for applying policies
+  Security group, grant permission over resources
+  Delegation, allows you to grant users specific privileges to perform advanced tasks on OUs without needing a Domain Administrator to step in.
+Kerberos: Used by any recent version of Windows. This is the default protocol in any recent domain.
+NetNTLM: Legacy authentication protocol kept for compatibility purposes.
+GPOs are distributed to the network via a network share called SYSVOL, which is stored in the DC. All users in a domain should typically have access to this share over the network to sync their GPOs periodically. The SYSVOL share points by default to the C:\Windows\SYSVOL\sysvol\ directory on each of the DCs in our network.
+
+Once a change has been made to any GPOs, it might take up to 2 hours for computers to catch up. If you want to force any particular computer to sync its GPOs immediately, you can always run the following command on the desired computer:
+
 **Last Updated:** 2026  
 **Status:** 📚 Active Learning
