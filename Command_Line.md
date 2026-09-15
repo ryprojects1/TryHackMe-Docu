@@ -20,4 +20,7 @@ Why CLI is better than GUI?
   copy, allow you to copy files from one location tp another
   tasklist, show running process
   Progress pics:
-  
+  <./screenshots/changingDirectory.png>
+  <./screenshots/treeCLI.png>
+ <./screenshots/taskkill.png>
+ <./screenshots/shutdownDetail.pgn>
