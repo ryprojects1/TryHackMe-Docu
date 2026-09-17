@@ -254,7 +254,63 @@ Get-ChildItem | Where-Object {$_.Length -gt 1MB}
 ![Get-Command Results](./screenshots/resultGS.png)
 
 ---
+# Linux Shell: Part 3
 
+## Grep Command
+
+Search for patterns in files:
+```bash
+grep "error" system.log
+# Shows all lines containing "error"
+```
+
+---
+
+## List Available Shells
+
+```bash
+cat /etc/shells
+```
+
+Shows all installed shells (Bash, Sh, Zsh, etc.)
+
+---
+
+## Bash Scripts
+
+Create and run script files (`.sh` extension):
+
+**Create:**
+```bash
+nano first_script.sh
+```
+
+**Script Example:**
+```bash
+#!/bin/bash
+echo "Hey, what's your name?"
+read name
+echo "Welcome, $name"
+```
+
+**Execute:**
+```bash
+chmod +x first_script.sh
+./first_script.sh
+```
+
+---
+
+## Key Points
+
+✅ Grep searches file patterns  
+✅ Scripts automate multiple commands  
+✅ Need execute permission: `chmod +x`  
+✅ Run with: `./filename.sh`  
+
+---
+
+**Status:** 📚 Active Learning
 **Status:** 📚 Active Learning
 **Last Updated:** 2026-09-15  
 **Status:** 📚 Active Learning
