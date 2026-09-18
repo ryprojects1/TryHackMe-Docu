@@ -300,17 +300,40 @@ chmod +x first_script.sh
 ```
 
 ---
+So basically did this malware analysis thing on TryDetectThis and it was actually pretty cool. Felt like I was doing actual professional work for once, not just following tutorials.
 
-## Key Points
+## What I Picked Up
 
-✅ Grep searches file patterns  
-✅ Scripts automate multiple commands  
-✅ Need execute permission: `chmod +x`  
-✅ Run with: `./filename.sh`  
+**Grep** - Used it to search through files and find patterns. Super useful when you're looking for specific stuff in logs.
 
----
+**Bash scripts** - Realized how much time you save by automating commands instead of running them one by one. Just `chmod +x` to make it executable and `./filename.sh` to run it.
 
-**Status:** 📚 Active Learning
-**Status:** 📚 Active Learning
-**Last Updated:** 2026-09-15  
-**Status:** 📚 Active Learning
+**File hashes** - Learned that the MD5 hash is basically the threat signature. It's the unique fingerprint that identifies a specific malware. You can't fake it, so it's reliable for knowing if a file is actually malicious.
+
+**YARA rules** - Pattern matching for malware detection. Kinda like writing rules to say "if a file looks like this, it's probably bad." Industry standard thing.
+
+**Threat signatures** - Basically just the fingerprint of an attack. Antivirus and security systems use databases of known signatures to catch threats.
+
+**Domain campaigns** - This was interesting. Multiple malicious domains can be linked together through the same HTTPS certificate. So if you find one bad domain, you can pivot off the certificate and find all the other domains the attacker owns.
+
+**DGA (Domain Generation Algorithm)** - Malware generates random domain names to avoid getting blocked. That's why you see domains like `sniffy-roll.cyou` and `wisecr213acktr.cyou` - they're just random garbage with cheap TLDs.
+
+## Why It Was Cool
+
+Honestly it felt legit. Like I was actually doing threat hunting, not just watching someone else do it. The hash analysis, tracking domains, connecting the dots.
+
+## The Annoying Part (But Also Kinda Fun)
+
+Had to dig through PDF documents to find answers. It was frustrating at first because the info wasn't just handed to you, but that's actually how real investigations work. You gotta search, cross-reference, piece things together. By the end I got it and felt pretty good about finding the answers myself.
+
+## New Stuff I Know Now
+
+- How to identify file hashes
+- What threat signatures actually are
+- How to track malicious campaigns using certificates
+- DGA patterns in domain names
+- YARA rules exist and how they work
+
+Pretty solid learning session overall. Ready to apply this to the homelab next.
+
+
