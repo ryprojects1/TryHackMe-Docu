@@ -1,1 +1,74 @@
+# Networking Fundamentals
+
+Quick reference for OSI Model, TCP/IP, and network basics.
+
+---
+
+## OSI Model (7 Layers)
+
+| Layer | Name | Function | Examples |
+|-------|------|----------|----------|
+| 7 | Application | Services & interfaces | HTTP, FTP, DNS, SMTP, POP3 |
+| 6 | Presentation | Encoding, encryption, compression | Unicode, MIME, JPEG, PNG |
+| 5 | Session | Establish & maintain sessions | NFS, RPC |
+| 4 | Transport | End-to-end communication | TCP, UDP |
+| 3 | Network | Logical addressing & routing | IP, ICMP, IPSec |
+| 2 | Data Link | Reliable adjacent node transfer | Ethernet, WiFi (802.11) |
+| 1 | Physical | Physical transmission media | Electrical, optical, wireless |
+
+---
+
+## TCP/IP Model
+
+Simplified version of OSI - combines some layers:
+
+- **Application Layer** = OSI layers 5, 6, 7
+- **Transport Layer** = OSI layer 4 (TCP, UDP)
+- **Internet Layer** = OSI layer 3 (IP, ICMP)
+- **Link Layer** = OSI layer 2 (Ethernet, WiFi)
+
+---
+
+## Key Concepts
+
+### Private IP Ranges (RFC 1918)
+```
+10.0.0.0 - 10.255.255.255 (10/8)
+172.16.0.0 - 172.31.255.255 (172.16/12)
+192.168.0.0 - 192.168.255.255 (192.168/16)
+```
+
+### Port Numbers
+- Valid range: 1 - 65535 (uses 2 octets)
+- Port 0 is reserved
+- Identifies processes/services on a device
+
+### TCP Three-Way Handshake
+How TCP establishes connection:
+1. SYN (client sends sync request)
+2. SYN-ACK (server acknowledges)
+3. ACK (client acknowledges back)
+
+### Encapsulation
+Each layer adds a header (and sometimes trailer) to data:
+- Application data → Transport layer adds TCP/UDP header → Segment/Datagram
+- Gets passed down the stack with each layer adding its own header
+
+---
+
+## Protocols & Services
+
+**TELNET**
+- Teletype Network protocol
+- Allows remote terminal connection
+- Text-based commands over TCP
+- Originally for remote admin (now less secure, use SSH)
+
+**Common Lab Services:**
+- Echo server (port 7) - echoes everything you send
+- Daytime server (port 13) - sends current time/date
+- HTTP web server (port 80) - serves web pages
+
+---
+
 
